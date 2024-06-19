@@ -9,9 +9,9 @@ using std::vector;
 int main() { 
         std::clock_t start = std::clock();
 
-        vector<int*> nums;
+        vector<unique_ptr<int>> nums;
         for (int i = 0; i < 10000; i++) {
-                nums.push_back(new int(i * 10));
+                nums.push_back(unique_ptr<int>(new int(i * 10)));
         }
 
         int sum = 0;
